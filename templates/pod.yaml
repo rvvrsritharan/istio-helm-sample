@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Values.deploymentapp1.name }}-{{ .Values.deploymentapp1.tag }}
+  labels:
+     app: {{ .Values.deploymentapp1.name }}
+     version: {{ .Values.deploymentapp1.tag }}
+spec:
+  containers:
+  - name: {{ .Values.deploymentapp1.name }}{{ .Values.deploymentapp1.tag }}
+    image: {{ .Values.deploymentapp1.image }}:{{ .Values.deploymentapp1.tag }}
+    
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ .Values.deploymentapp2.name }}-{{ .Values.deploymentapp2.tag }}
+  labels:
+    app: {{ .Values.deploymentapp2.name }}
+    version: {{ .Values.deploymentapp2.tag }}
+spec:
+  containers:
+    - name: {{ .Values.deploymentapp2.name }}{{ .Values.deploymentapp2.tag }}
+      image: {{ .Values.deploymentapp2.image }}:{{ .Values.deploymentapp2.tag }}

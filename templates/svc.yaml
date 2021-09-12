@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.service1.name }}
+spec:
+  ports:
+    - name: http-web
+      port: 80
+      targetPort: 8080
+  selector:
+    app: {{ .Values.deploymentapp1.name }}
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.service2.name }}
+spec:
+  ports:
+    - name: http-web
+      port: 80
+      targetPort: 8080
+  selector:
+    app: {{ .Values.deploymentapp2.name }}

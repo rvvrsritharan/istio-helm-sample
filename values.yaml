@@ -1,0 +1,24 @@
+deploymentapp1:
+  name: waitrapp1
+  image: donalboroto/docker-helloworld_nginx
+  pullPolicy: IfNotPresent
+  tag: v1
+  ports:
+    - containerPort: 8080
+deploymentapp2:
+  name: waitrapp2
+  image: donalboroto/docker-helloworld_nginx
+  pullPolicy: IfNotPresent
+  tag: v1
+  ports:
+    - containerPort: 8080
+
+service1:
+  name: waitrsvc1
+service2:
+  name: waitrsvc2
+
+gateway:
+  name: waitrapp-gateway
+virtualsvc:
+  name: waitrapp-vsvc

@@ -1,0 +1,4 @@
+apiVersion: v2
+name: waitrapp
+description: A Helm chart which deploys multiple applications routing on separate routes
+version: 0.1.0
